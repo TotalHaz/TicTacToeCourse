@@ -7,18 +7,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AppModeView: View {
+    @StateObject private var viewModel = AppModeViewModel()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group{
+            switch viewModel.appMode {
+            case .gameSetup:
+                Text("Game Setup")
+            case .game:
+                Text("Game")
+            }
         }
-        .padding()
+        .animation(.easeIn, value: viewModel.appMode)
     }
 }
 
 #Preview {
-    ContentView()
+    AppModeView()
 }
