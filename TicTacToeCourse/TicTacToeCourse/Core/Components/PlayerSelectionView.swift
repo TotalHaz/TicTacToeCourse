@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlayerSelectionView: View {
+    
     @Binding var player1: PlayerProfile
     @Binding var player2: PlayerProfile
     
