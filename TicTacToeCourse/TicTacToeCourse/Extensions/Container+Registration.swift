@@ -11,4 +11,8 @@ extension Container {
     var appModeStore: Factory<AppModeLiveStore> {
         self { MainActor.assumeIsolated { AppModeLiveStore() } }.singleton
     }
+    
+    var gameSetupStore: Factory<GameSetUpLiveStore> {
+        self { MainActor.assumeIsolated { GameSetUpLiveStore() } }.singleton
+    }
 }
