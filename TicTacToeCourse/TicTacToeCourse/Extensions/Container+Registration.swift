@@ -15,4 +15,11 @@ extension Container {
     var gameSetupStore: Factory<GameSetUpLiveStore> {
         self { MainActor.assumeIsolated { GameSetUpLiveStore() } }.singleton
     }
+    
+    var errorHandlerService: Factory<ErrorHandlerProtocol> {
+        self { MainActor.assumeIsolated { ErrorHandlerService() }}.singleton
+    }
+    var analyticsService: Factory<AnalyticsProtocol> {
+        self { MainActor.assumeIsolated { AnalyticsService() }}.singleton
+    }
 }
