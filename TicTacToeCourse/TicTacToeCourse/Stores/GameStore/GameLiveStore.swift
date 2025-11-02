@@ -18,7 +18,7 @@ final class GameLiveStore: GameStore {
     }
     
     func checkWin(in board: Board, for cellSymbol: CellState) -> [CellCoordinate]? {
-        boardLogicService.checkWin(in: <#T##Board#>, for: cellSymbol)
+        boardLogicService.checkWin(in: board, for: cellSymbol)
     }
     
     func isBoardFull(_ board: Board) -> Bool {
